@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="glass-card rounded-4">
+      <div class="card-body p-4">
+        <h3 class="mb-3 d-flex align-items-center gap-2"><i class='bx bx-user-plus'></i> Sign Up</h3>
+        <form method="post" class="vstack gap-2">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-success w-100" type="submit"><i class='bx bx-check-circle me-1'></i>Create account</button>
+        </form>
+        <div class="text-center mt-3">
+          <small>Already have an account? <a href="/login/">Log in</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

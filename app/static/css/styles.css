@@ -1,0 +1,11 @@
+body { background-color: #0f172a; color: #e2e8f0; }
+.card { background-color: #111827; border-color: #1f2937; color: #e5e7eb; }
+.navbar-dark .navbar-brand, .navbar-dark .nav-link { color: #e5e7eb; }
+.btn-primary { background-color: #6366f1; border-color: #6366f1; }
+.btn-success { background-color: #22c55e; border-color: #22c55e; }
+.btn-outline-light { color: #e5e7eb; border-color: #e5e7eb; }
+.alert-info { background-color: #0ea5e9; border-color: #0ea5e9; color: #0b1220; }
+.mood-card { transition: transform 0.1s ease-in-out; border-width: 2px; }
+.mood-card:hover { transform: translateY(-3px); }
+
+

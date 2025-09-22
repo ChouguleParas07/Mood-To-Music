@@ -1,0 +1,44 @@
+:root{
+  --bg1:#0f172a; --bg2:#111827; --glass:#0b1324cc; --border:#263043; --text:#e5e7eb; --muted:#94a3b8;
+  --primary:#8b5cf6; --secondary:#22d3ee; --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
+}
+*{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'}
+
+body.gradient-bg{
+  min-height:100vh; color:var(--text);
+  background: radial-gradient(1200px 600px at 0% 0%, #1b2352 0%, transparent 50%),
+              radial-gradient(800px 400px at 100% 0%, #0f766e 0%, transparent 50%),
+              linear-gradient(180deg, #0b1027 0%, #0a0f1f 100%);
+}
+.glass-card{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.glass-nav{ background: linear-gradient( to right, rgba(11,19,36,.85), rgba(13,14,35,.6)); border-bottom:1px solid var(--border); }
+.brand-text{ font-weight:700; letter-spacing:.3px }
+
+.card{ background-color:var(--bg2); border-color:var(--border); color:var(--text); }
+.btn-primary{ background: linear-gradient(135deg,var(--primary),#6366f1); border:0 }
+.btn-success{ background: linear-gradient(135deg,var(--success),#16a34a); border:0 }
+.btn-outline-light{ color:var(--text); border-color:#ffffff3d }
+.alert-info{ background: linear-gradient(135deg,#0ea5e9,#38bdf8); border:0; color:#081225 }
+
+.mood-card{ border-width:2px; transition: transform .25s ease, box-shadow .25s ease; border-radius:1rem }
+.mood-card:hover{ transform: translateY(-6px) scale(1.01); box-shadow: 0 12px 30px rgba(0,0,0,.35) }
+.mood-card .card-body{ padding:2rem 1.25rem }
+
+.emoji-badge{ font-size:3rem; display:inline-flex; width:74px; height:74px; align-items:center; justify-content:center; border-radius:20px; background:linear-gradient(135deg,#111827,#0b1220); border:1px solid var(--border) }
+
+.form-control,.form-select{ background:#0f172a; color:var(--text); border-color:#243044 }
+.form-control:focus,.form-select:focus{ background:#0f172a; color:#fff; border-color:#5b7cfa; box-shadow:0 0 0 .25rem rgba(99,102,241,.15) }
+
+.playlist-card{ overflow:hidden }
+.playlist-card .card-body{ position:relative }
+.playlist-card .btn{ border-radius:12px }
+
+footer .glass-card{ background:linear-gradient(180deg, rgba(11,19,36,.75), rgba(11,19,36,.4)); }
+
+

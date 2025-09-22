@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Your Mood History</h2>
+    <a class="btn btn-outline-secondary" href="/dashboard/">Back to Dashboard</a>
+ </div>
+
+<div class="row mb-4">
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Mood Counts</h5>
+                <canvas id="moodChart" height="140"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recent Selections</h5>
+                <ul class="list-group list-group-flush">
+                    {% for r in records %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ r.mood }}</span>
+                        <small class="text-muted">{{ r.created_at|date:'Y-m-d H:i' }}</small>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">No history yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<script>
+    const labels = {{ labels|safe }};
+    const counts = {{ counts|safe }};
+    const ctx = document.getElementById('moodChart');
+    if (ctx && labels.length) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Mood Frequency',
+                    data: counts,
+                    backgroundColor: '#60a5fa',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    }
+</script>
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">How are you feeling today?</h2>
+    {% if quote_text %}
+    <div class="alert alert-info mb-0" role="alert" style="max-width: 50%;">
+        <small>“{{ quote_text }}” — {{ quote_author or 'Unknown' }}</small>
+    </div>
+    {% endif %}
+ </div>
+
+<div class="row g-3">
+    {% for m in moods %}
+    <div class="col-6 col-md-4 col-lg-3">
+        <a href="{{ url_for('main.playlist', mood=m.name) }}" class="text-decoration-none">
+            <div class="card mood-card text-center" style="border-color: {{ m.color }};">
+                <div class="card-body">
+                    <div class="display-4">{{ m.emoji }}</div>
+                    <div class="fw-bold mt-2" style="color: {{ m.color }};">{{ m.name }}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+ </div>
+{% endblock %}
+
+
